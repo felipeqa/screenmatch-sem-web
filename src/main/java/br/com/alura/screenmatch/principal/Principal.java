@@ -9,10 +9,7 @@ import br.com.alura.screenmatch.service.ConverteDados;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Principal {
@@ -59,6 +56,7 @@ public class Principal {
 
         dadosEpisodios.stream()
                 .filter(episodio -> !episodio.avaliacao().equalsIgnoreCase("N/A"))
+                .peek(ep -> System.out.println("filtro n/a: " + ep))
                 .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
                 .limit(5)
                 .forEach(System.out::println);
@@ -70,6 +68,20 @@ public class Principal {
                 .collect(Collectors.toList());
 
         System.out.println(episodios);
+
+        System.out.println("Digite um trecho do episodio:");
+        var trechoEpisodio = leitura.nextLine();
+
+        Optional<Episodio> episodioEncontrado = episodios.stream()
+                .filter(episodio -> episodio.getTitulo().toUpperCase().contains(trechoEpisodio.toUpperCase()))
+                .findFirst();
+
+        if (episodioEncontrado.isPresent()) {
+            System.out.println("Episodio encontrado: " + episodioEncontrado.get().getTitulo());
+            System.out.println("Temporada: " + episodioEncontrado.get().getTemporada());
+        } else {
+            System.out.println("Episodio não encontrado!!!");
+        }
 
         System.out.println("A partir de que ano vc deseja ver os episódios?");
 
