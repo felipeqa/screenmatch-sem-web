@@ -1,6 +1,5 @@
 package br.com.alura.screenmatch;
 
-import br.com.alura.screenmatch.exercicios.Multiplicacao;
 import br.com.alura.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -41,6 +40,26 @@ public class ScreenmatchApplication implements CommandLineRunner {
 		System.out.println(multiplicacao.executar(2, 4));
 		*/
 
+
+		/*
+		EhPrimo primo = (numero) -> {
+			if (numero <= 1) return false;
+			if (numero == 2) return true;
+			if (numero % 2 == 0) return false;
+
+			long limite = (long) Math.sqrt(numero);
+			for (long i = 3; i <= limite; i += 2) {
+				if (numero % i == 0) {
+					return false;
+				}
+			}
+			return true;
+		};
+
+		//maior numero primo long
+		long numero = 9223372036854775783L;
+		System.out.println(primo.validarNumeroPrimo(numero));
+		 */
 
 
 //		var consumoApi = new ConsumoApi();
