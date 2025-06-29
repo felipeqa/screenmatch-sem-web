@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch;
 
+import br.com.alura.screenmatch.exercicios.Multiplicacao;
 import br.com.alura.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +28,18 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 
 
+
+
+
+
+		/*
+		exercicio 1
+		Multiplicacao multiplicacao = (a, b) ->  {
+            return (a * b);
+        };
+
+		System.out.println(multiplicacao.executar(2, 4));
+		*/
 
 
 
