@@ -67,6 +67,16 @@ public class Main {
                 .sorted()
                 .forEach(System.out::println);
 
+        List<Integer> numeros4 = Arrays.asList(1, 2, 3, 4, 5);
+
+        int soma = numeros4.stream()
+                .peek(n -> System.out.println("Elemento: " + n))
+                .map(n -> n * 2)
+                .peek(n -> System.out.println("Conteúdo depois do map: " + n))
+                .reduce(0, (total, numero) -> total + numero);
+
+        System.out.println("A soma dos números é: " + soma);
+
     }
 
     private static boolean ehPrimo(int numero) {
